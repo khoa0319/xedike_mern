@@ -2,13 +2,14 @@
 const mongoose = require('mongoose');
 
 const UserSchema = mongoose.Schema({
-  email: { type: String, require: true },
-  password: String,
-  fullName: String,
+  // cannot modified: email, id, phone, usertype
+  email: { type: String, required: true },
+  password: {type: String, required: true }, 
+  fullName: {type: String, required: true },
   phone: String,
-  userType: { type: String, require: true },
-  dateOfBirth: {Type: Date, default: new Date()},
-  registerDate: {type: Date, default: new Date()},
+  userType: { type: String, required: true },
+  dateOfBirth: { type: Date },
+  registerDate: { type: Date, default: new Date() },
   numberOfTrips: { type: Number, default: 0 },
   numberOfKms: Number,
   avatar: String,
