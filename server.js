@@ -1,4 +1,4 @@
-require('dotenv').config();
+//require('dotenv').config();
 /* 3rd packages */
 const express = require('express');
 const mongoose = require('mongoose');
@@ -23,6 +23,7 @@ app.use(express.json())
 // Router
 app.use('/api/users', require('./routes/api/users'));
 const port = process.env.PORT || 5000;
+
 app.listen(port, () => {
   console.log("Server's listening on PORT: " + port);
 });

@@ -88,7 +88,7 @@ router.post('/login', (req, res) => {
           }
           jwt.sign(
             payload,
-            process.env.SECRET_KEY,
+            "khoahuynh",
             {expiresIn: '1h'},
             (err, token) => {
               res.status(200).json({ msg: "login success", token: 'bearer ' + token});
