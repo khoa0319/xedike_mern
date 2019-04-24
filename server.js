@@ -15,6 +15,7 @@ mongoose.connect("mongodb+srv://root:khoa0319@cluster0-qnwsn.mongodb.net/test?re
 const app = express();
 /* middlewares */
 app.use('/uploads', express.static('uploads'));
+app.use(express.static(__dirname + '/public'));
 app.use(passport.initialize());
 require('./config/passport')(passport);
 // parser
