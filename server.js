@@ -6,7 +6,7 @@ const passport = require('passport');
 /* project packages */
 
 /* Connect DB */
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true })
+mongoose.connect("mongodb+srv://root:khoa0319@cluster0-qnwsn.mongodb.net/test?retryWrites=true", { useNewUrlParser: true })
   .then(() => {
     console.log("Connected to DB");
   })
