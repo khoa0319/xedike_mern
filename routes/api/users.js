@@ -143,23 +143,23 @@ router.post('/upload-avatar',
 
 /* Driver actions */
 
-router.post('/drivers/update-profile',
-  passport.authenticate('jwt', {session: false}),
-  authUser('driver'),
-  (req, res) => {
-    const { id, address, mainJob } = req.body;
-    User.findOne({ _id: id})
-      .then(user => {        
-        if (!user) return res.status(404).json({err: "Not found"});
-        user.address = password;
-        user.fullName = fullname;
-        return user.save()
-      })
-      .then(result => res.status(200).json(result))
-      .catch(err => res.status(200).json(err))
-    // validate address & mainjob
-  }
-)
+// router.post('/drivers/update-profile',
+//   passport.authenticate('jwt', {session: false}),
+//   authUser('driver'),
+//   (req, res) => {
+//     const { id, address, mainJob } = req.body;
+//     User.findOne({ _id: id})
+//       .then(user => {        
+//         if (!user) return res.status(404).json({err: "Not found"});
+//         user.address = password;
+//         user.fullName = fullname;
+//         return user.save()
+//       })
+//       .then(result => res.status(200).json(result))
+//       .catch(err => res.status(200).json(err))
+//     // validate address & mainjob
+//   }
+// )
 
 // test current
 router.get('/test-private', 
