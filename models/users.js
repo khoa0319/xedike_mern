@@ -9,7 +9,7 @@ const UserSchema = mongoose.Schema({
   phone: String,
   userType: { type: String, required: true },
   dateOfBirth: {type: Date},
-  registerDate: {type: Date, default: new Date().getTime()},
+  registerDate: {type: Date, default: new Date()},
   numberOfTrips: { type: Number, default: 0 },
   numberOfKms: Number,
   avatar: String,
