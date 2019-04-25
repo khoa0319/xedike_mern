@@ -6,6 +6,8 @@ const passport = require('passport');
 /* project packages */
 
 /* Connect DB */
+// mongodb://localhost:27017/fs03-xedike
+// mongodb+srv://root:khoa0319@cluster0-qnwsn.mongodb.net/test?retryWrites=true
 mongoose.connect("mongodb+srv://root:khoa0319@cluster0-qnwsn.mongodb.net/test?retryWrites=true", { useNewUrlParser: true })
   .then(() => {
     console.log("Connected to DB");

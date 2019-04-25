@@ -2,12 +2,12 @@
 const mongoose = require('mongoose');
 
 const CarSchema = mongoose.Schema({
-  brand: String,
-  model: String,
-  manufactoringYear: Number,
-  licensePlate: String,
-  numberOfSeats: Number,
-  carImage: String
+  brand: { type: String, required: true },
+  model: { type: String, required: true },
+  manufactoringYear: { type: Number, required: true, min:2000 },
+  licensePlate: { type: String, required: true },
+  numberOfSeats: { type: Number, required: true, min:2, max: 10 },
+  carImage: { type: String }
 })
 
 const DriverSchema = mongoose.Schema({
@@ -16,14 +16,14 @@ const DriverSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
-  address: String,
-  passportId: String,
-  mainJob: String,
+  address: { type: String, required: true },
+  passportId: { type: String, required: true },
+  mainJob: { type: String, required: true },
   carInfo: {
     type: CarSchema,
     required: true
   },
-  passengerRate: Number
+  passengerRate: {type: Number}
 });
 
 const Driver = mongoose.model('Driver', DriverSchema);
